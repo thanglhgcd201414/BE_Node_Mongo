@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "90b9c455-2ab6-416c-8940-d133723764a0",
+		"name": "E-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38240534"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test1@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MTFhZWFiLWY0NmQtMjQ4Yy1hMjlkLTU1YWQxODU1NjUxYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQzMDYzOTk5LCJleHAiOjE3NDMxNTAzOTl9.EDrgpD-CIMeLuSUP7zqWl42xMSmLGfCXpeah6e8UVUe7WRbWCkcPE0yLATDiEwWsbJlXGInwIS6mCTS_6tKJF1ooUEPtrYHY2Pb7YbOgZ392WKrSECSk5FCCUrhUSVHp30S7FP1TcLP1DvCbPuYJUrVSoaO1zjcbDB2nnePiG4Sv4T5JYddNXHb7IFLF-MKh1iQj2tbB1l0IrO4L56uu5WF92WXyyy8UIVJ4xtrifYymy79DyZoFWM9z_aIFYcKkqmk1HQsCjadYybeB-fUUrzQj6dkbkjgzpy88XJUKSkkLzyM7xxuWWQBFVpw7_tp8LplkU9mrVbx3LsOYfUbUVQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"loại 1\",\r\n    \"description\": \"Mô tả loại 1\",\r\n    \"slug\": \"loai-1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get category detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category/d1d6b6e4-2782-4ffc-b6bd-c9b53a72bc68",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"d1d6b6e4-2782-4ffc-b6bd-c9b53a72bc68"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MTFhZWFiLWY0NmQtMjQ4Yy1hMjlkLTU1YWQxODU1NjUxYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQzMDYzOTk5LCJleHAiOjE3NDMxNTAzOTl9.EDrgpD-CIMeLuSUP7zqWl42xMSmLGfCXpeah6e8UVUe7WRbWCkcPE0yLATDiEwWsbJlXGInwIS6mCTS_6tKJF1ooUEPtrYHY2Pb7YbOgZ392WKrSECSk5FCCUrhUSVHp30S7FP1TcLP1DvCbPuYJUrVSoaO1zjcbDB2nnePiG4Sv4T5JYddNXHb7IFLF-MKh1iQj2tbB1l0IrO4L56uu5WF92WXyyy8UIVJ4xtrifYymy79DyZoFWM9z_aIFYcKkqmk1HQsCjadYybeB-fUUrzQj6dkbkjgzpy88XJUKSkkLzyM7xxuWWQBFVpw7_tp8LplkU9mrVbx3LsOYfUbUVQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category/d1d6b6e4-2782-4ffc-b6bd-c9b53a72bc68",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"d1d6b6e4-2782-4ffc-b6bd-c9b53a72bc68"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MTFhZWFiLWY0NmQtMjQ4Yy1hMjlkLTU1YWQxODU1NjUxYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQzMDYzOTk5LCJleHAiOjE3NDMxNTAzOTl9.EDrgpD-CIMeLuSUP7zqWl42xMSmLGfCXpeah6e8UVUe7WRbWCkcPE0yLATDiEwWsbJlXGInwIS6mCTS_6tKJF1ooUEPtrYHY2Pb7YbOgZ392WKrSECSk5FCCUrhUSVHp30S7FP1TcLP1DvCbPuYJUrVSoaO1zjcbDB2nnePiG4Sv4T5JYddNXHb7IFLF-MKh1iQj2tbB1l0IrO4L56uu5WF92WXyyy8UIVJ4xtrifYymy79DyZoFWM9z_aIFYcKkqmk1HQsCjadYybeB-fUUrzQj6dkbkjgzpy88XJUKSkkLzyM7xxuWWQBFVpw7_tp8LplkU9mrVbx3LsOYfUbUVQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/category/d1d6b6e4-2782-4ffc-b6bd-c9b53a72bc68",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"category",
+								"d1d6b6e4-2782-4ffc-b6bd-c9b53a72bc68"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MTFhZWFiLWY0NmQtMjQ4Yy1hMjlkLTU1YWQxODU1NjUxYSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQzMTQyMTUyLCJleHAiOjE3NDMyMjg1NTJ9.hJa1p42GNOYsg3lBm3Qn236gGQ0w_ZAjEYRGMI_q9wC-UpYmQHTksUhn3wVZcHyft1ZYlROxRq_IfFXTQ2mzp3GxEAglxXpRg_Qe31OMbccISN1vEmbpWQ0arc0qp4QxabzxhyYLqv-ZvdSvmZXLk9TQTOn2lfoNATKG7lem33xntVPcQ7JACxAomd1QTI7NOEEpuaggkZ5UWWjMcgXY3QcqT-cktAsg7LLVNtePdCIarJbE5srV-6Tvk8qaC0U-5lWFkMuQoJyU90xWkfnQdsZd9Yc17_Ci7k93ztMWGQbLI8ijuxCYzqJ8Cp8TuNecnMjEGSsd_x8YcvJSWV9rpg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"IP 11 pro\",\r\n    \"description\": \"Mô tả sản phẩm 1\",\r\n    \"brand\": \"Apple\",\r\n    \"model\": \"IP11\",\r\n    \"operatingSystem\": \"IOS\",\r\n    \"images\": [\r\n        \"/img1.jpg\",\r\n        \"/img2.jg\",\r\n        \"/img3.jpg\"\r\n    ],\r\n    \"categories\": [\r\n        \"29a42563-bc21-4f96-b664-e7503a29ec7a\",\r\n        \"74d77b26-cbf0-4746-9a0e-cb2ebc4f7a6f\"\r\n    ],\r\n    \"variants\": [\r\n        {\r\n            \"sku\": \"DFSK-32\",\r\n            \"stock\": 100,\r\n            \"price\": 12000000,\r\n            \"originalPrice\": 14000000,\r\n            \"color\": \"black\",\r\n            \"storageCapacity\": \"644G\",\r\n            \"specifications\": {\r\n                \"name\": \"name ip\",\r\n                \"info\": \"info ip\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
